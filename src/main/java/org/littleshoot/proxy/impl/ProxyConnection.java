@@ -739,6 +739,12 @@ abstract class ProxyConnection<I extends HttpObject> extends
             }
         }
 
+        @Override
+        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+            super.exceptionCaught(ctx, cause);
+        }
+
+
         protected abstract void responseRead(HttpResponse httpResponse);
     }
 
